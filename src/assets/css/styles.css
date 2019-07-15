@@ -19,3 +19,9 @@
 .item {
     text-transform: capitalize;
 }
+.custom-span-notes {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}

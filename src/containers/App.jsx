@@ -37,7 +37,15 @@ export class App extends Component {
         return Object.entries(this.state.requiredNotes).reverse().map((el ,i ) => {
             return (
                     <div role="listitem" key={ i } className="item">
-                        <strong> { el[0] } </strong> rs. notes will be <strong> { el[1] } </strong>
+                        <span className='custom-span-notes'>
+                            <strong> { el[0] } </strong>
+                        </span>
+                        <span className='custom-span'>
+                           rs. notes will be
+                        </span> 
+                        <span className='custom-span'>
+                            <strong> { el[1] } </strong>
+                        </span> 
                     </div>
             );
         })
@@ -75,6 +83,8 @@ export class App extends Component {
                         <div role="list" className="ui list">
                             { this.renderNotes() }
                         </div>
+
+                        
                         <div>
                             <h2>
                                 Total numbers of Notes : <strong>{ this.totalNotes() }</strong>
