@@ -207,7 +207,8 @@ const App = () => {
 		e.preventDefault();
 	};
 	useEffect(() => {
-		calNotes(amount, requiredNotes);
+		// calNotes
+		calNotes(amount, requiredNotes); 
 	}, [amount]);
 	return (
 		<div className='ui container'>
