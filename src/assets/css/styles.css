@@ -13,7 +13,7 @@
     text-transform: capitalize;
 }
 .ui.segment .ui.form .input.custom-input {
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 8px red;
     color: red;
 }
 .item {
