@@ -207,7 +207,7 @@ const App = () => {
 		e.preventDefault();
 	};
 	useEffect(() => {
-		// calNotes
+		// calNotes()
 		calNotes(amount, requiredNotes); 
 	}, [amount]);
 	return (
