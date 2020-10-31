@@ -1,6 +1,6 @@
 {
 	"name": "atm-app",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"private": true,
 	"dependencies": {
 		"react": "^17.0.1",
