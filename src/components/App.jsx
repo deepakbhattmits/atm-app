@@ -133,8 +133,8 @@
 // 	}
 // }
 // export default App;
-
-import React, { useState, useEffect } from 'react';
+// import React,{ useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 const App = () => {
 	const [amount, setAmount] = useState(0);
@@ -151,18 +151,17 @@ const App = () => {
 		2: 0,
 		1: 0,
 	});
-	let notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
-	const calNotes = (amo, req) => {
+	const calNotes = useCallback((amo, req) => {
+		const notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
 		let amount = amo;
 		let requiredNotes = req;
-		notes.map((el) => {
-			let c = Math.floor(amount / el);
-			amount = amount - el * Math.floor(amount / el);
-			requiredNotes = { ...requiredNotes, [el]: c };
-			// return true;
-		});
+		for (let note of notes) {
+			let c = Math.floor(amount / note);
+			amount = amount - note * Math.floor(amount / note);
+			requiredNotes = { ...requiredNotes, [note]: c };
+		}
 		setRequiredNotes(requiredNotes);
-	};
+	}, []);
 	const renderNotes = () => {
 		return Object.entries(requiredNotes)
 			.reverse()
@@ -207,9 +206,9 @@ const App = () => {
 		e.preventDefault();
 	};
 	useEffect(() => {
-		//  calNotes()
+		console.log('notes');
 		calNotes(amount, requiredNotes);
-	}, [amount]);
+	}, [calNotes, amount, requiredNotes]);
 	return (
 		<div className='ui container'>
 			<div className='custom-div'>
