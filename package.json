@@ -1,11 +1,11 @@
 {
 	"name": "atm-app",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"private": true,
 	"dependencies": {
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
-		"react-scripts": "3.4.4"
+		"react-scripts": "4.0.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
